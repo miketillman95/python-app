@@ -1,10 +1,21 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template
 
-app = Flask(_name_)
+# Create a flask app
+app = Flask(
+  __name__,
+  template_folder='templates',
+  static_folder='static'
+)
 
+# Index page rendering 'index.html'
 @app.route('/')
-def index():
-    return "initial API"
+def hello():
+  return render_template('index.html')
 
-if _name_ =='_main_':
-    app.run(debug=True)
+if __name__ == '__main__':
+  # Run the Flask app
+  app.run(
+	host='0.0.0.0',
+	debug=True,
+	port=8080
+  )
