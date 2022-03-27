@@ -12,6 +12,10 @@ app = Flask(
 def hello():
   return render_template('index.html')
 
+@app.route('/display')
+def display():
+  return render_template('')
+
 
 incomes = [
   { 'description': 'salary', 'amount': 5000 }
